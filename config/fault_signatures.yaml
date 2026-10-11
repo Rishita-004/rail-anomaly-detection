@@ -1,0 +1,24 @@
+# Knowledge base: expected feature-group attribution pattern per fault.
+# prototype values are relative weights; the matcher L1-normalises them.
+# rules: feature -> {min|max} constraint on the z-scored feature value.
+faults:
+  rail_crack:
+    prototype: {acoustic: 1.0, accel_crest: 0.4, accel_hf: 0.3, accel_energy: 0.2}
+    rules: {strain_gradient: {max: 1.5}}
+    action: "Ultrasonic inspection within 48 h; 60 km/h restriction if score > 0.9"
+  loose_fastening:
+    prototype: {accel_hf: 1.0, accel_energy: 0.6, accel_mf: 0.3, accel_crest: 0.3}
+    rules: {}
+    action: "Check clip/bolt torque on affected sleepers within 7 days"
+  ballast_void:
+    prototype: {accel_lf: 1.0, jitter: 0.4, accel_energy: 0.3, strain_peak: 0.3, strain_trend: 0.2}
+    rules: {}
+    action: "Tamping / ballast replacement at affected sleepers within 14 days"
+  thermal_buckling:
+    prototype: {strain_trend: 1.0, temp: 0.8, strain_peak: 0.5, temp_strain_corr: 0.3}
+    rules: {temp: {min: 0.5}}
+    action: "Apply heat-related speed restriction; inspect rail neutral temperature"
+  misalignment:
+    prototype: {lateral: 1.0, strain_trend: 0.05, temp_strain_corr: 0.05}
+    rules: {}
+    action: "Track geometry survey and realignment within 30 days"

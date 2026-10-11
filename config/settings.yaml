@@ -1,0 +1,22 @@
+# Global pipeline settings
+sampling:
+  rate_hz: 500            # common resampled rate for all channels
+  window_sec: 2.0
+  stride_sec: 0.5
+
+channels: [accel_v, accel_l, strain, temp, acoustic]
+
+detection:
+  ensemble_weights: {iforest: 0.4, lstm_ae: 0.6}
+  threshold_percentile: 99.5
+  persistence_k: 4        # consecutive windows above threshold to open an event
+  clear_k: 20             # consecutive windows below threshold to close it
+  severity_bands: {low: 0.6, medium: 0.85}
+
+models:
+  iforest: {n_estimators: 100, contamination: 0.001, random_state: 42}
+  lstm_ae: {hidden: 32, latent: 16, epochs: 15, lr: 0.001, batch: 64}
+
+paths:
+  data: data
+  artifacts: artifacts

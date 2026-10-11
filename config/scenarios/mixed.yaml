@@ -1,0 +1,9 @@
+name: mixed_faults
+duration_min: 90
+segments: [S-10, S-11, S-12, S-13]
+seed: 11
+faults:
+  - {segment: S-10, type: ballast_void,     onset_min: 15, growth: exponential, max_severity: 0.9, ramp_min: 30}
+  - {segment: S-12, type: rail_crack,       onset_min: 30, growth: linear,      max_severity: 1.0, ramp_min: 30}
+  - {segment: S-13, type: thermal_buckling, onset_min: 45, growth: linear,      max_severity: 0.8, ramp_min: 25}
+  - {segment: S-11, type: loose_fastening,  onset_min: 60, growth: step,        max_severity: 0.7, ramp_min: 1}

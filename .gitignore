@@ -1,0 +1,47 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local runtime / generated data
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.sqlite3
+*.db
+*.log
+logs/
+data/
+tmp/
+temp/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# Docker local override files (if used later)
+docker-compose.override.yml
+
+# Keep trained model artifacts and metadata in the repo
+!artifacts/
+!artifacts/*.joblib
+!artifacts/*.json

@@ -1,0 +1,11 @@
+name: crack_s12
+duration_min: 90
+segments: [S-10, S-11, S-12]
+seed: 7
+faults:
+  - segment: S-12
+    type: rail_crack
+    onset_min: 30
+    growth: linear      # linear | exponential | step
+    max_severity: 1.0
+    ramp_min: 45        # minutes to reach max_severity

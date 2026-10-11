@@ -1,0 +1,16 @@
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+scikit-learn>=1.3
+pyyaml>=6.0
+shap>=0.44
+joblib>=1.3
+pyarrow>=14.0
+streamlit>=1.30
+plotly>=5.18
+fastapi>=0.110
+uvicorn>=0.27
+# optional — enables the LSTM Autoencoder (pip install torch)
+# torch>=2.1
+# optional — enables the Kafka bus (pip install confluent-kafka)
+# confluent-kafka>=2.3

@@ -1,0 +1,5 @@
+name: healthy_baseline
+duration_min: 60
+segments: [S-10, S-11, S-12]
+faults: []
+seed: 1
